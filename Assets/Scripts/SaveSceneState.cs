@@ -1,23 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SaveSceneState : MonoBehaviour
-{
-    private void Awake()
+namespace Dome {
+    public class SaveSceneState : MonoBehaviour
     {
-        // If there is already a Scene Wrapper of this type, destroy it
-        foreach (SaveSceneState script in GameObject.FindObjectsOfType<SaveSceneState>())
+        GameManager gm;
+        private void Awake()
         {
-            if ((this.gameObject.name == "IWSceneWrapper" && script.gameObject.name == "IWSceneWrapper" && script.gameObject != this.gameObject) ||
-               (this.gameObject.name == "OWSceneWrapper" && script.gameObject.name == "OWSceneWrapper" && script.gameObject != this.gameObject))
+            gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
+            string curWrapper = gameObject.name;
+            Scene curScene = SceneManager.GetActiveScene();
+
+            // If there is already a Scene Wrapper of this type, destroy it
+            foreach (GameObject wrapper in GameObject.FindGameObjectsWithTag("SceneWrapper"))
             {
-                Destroy(script.gameObject);
+                if ((curWrapper == "IWSceneWrapper" && wrapper.name == "IWSceneWrapper" && wrapper != gameObject) ||
+                   (curWrapper == "OWSceneWrapper" && wrapper.name == "OWSceneWrapper" && wrapper != gameObject))
+                {
+                    Destroy(wrapper);
+                }
+            };
+
+            if (curWrapper == "IWSceneWrapper")
+            {
+                gm.curIWScene = curScene;
+                gm.iwWrapper = gameObject;
             }
-        };
-    }
-    void Start()
-    {
-        DontDestroyOnLoad(this);
+            else
+            {
+                gm.curOWScene = curScene;
+                gm.owWrapper = gameObject;
+            }
+
+        }
+        void Start()
+        {
+            DontDestroyOnLoad(this);
+        }
     }
 }

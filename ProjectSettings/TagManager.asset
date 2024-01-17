@@ -5,15 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Pickup
+  - Interactible
+  - Interactor
+  - SceneWrapper
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - GameManager
   - Water
   - UI
   - Terrain
-  - 
+  - Interactions
   - 
   - 
   - 

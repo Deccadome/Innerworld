@@ -10,19 +10,17 @@ public class SmoothCameraFollow : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
-    private void Start()
-    {
-        transform.position = target.position + offset;
-    }
-
-    private void OnEnable()
-    {
-        transform.position = target.position + offset;
-    }
-
     void FixedUpdate()
     {
-        Vector3 movePosition = target.position + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping);
+        if(target != null)
+        {
+            Vector3 movePosition = target.position + offset;
+            transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping);
+        }
+    }
+
+    public void SetTarget(Transform obj)
+    {
+        target = obj;
     }
 }

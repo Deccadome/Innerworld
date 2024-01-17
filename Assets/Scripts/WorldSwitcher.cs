@@ -4,131 +4,146 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WorldSwitcher : MonoBehaviour
+namespace Dome
 {
-    public Animator transition;
-    public GameObject sceneWrapper;
-    public bool worldSwitchEnabled = true;
-    
-    float transitionTime = 1f;
-    public enum World
+    public class WorldSwitcher : MonoBehaviour
     {
-        Outerworld,
-        Innerworld
-    }
+        public Animator transition;
+        public GameObject sceneWrapper;
+        public bool worldSwitchEnabled = true;
+        public InputReader inputReader;
 
-    public World curWorld;
-    public Scene curScene;
-    Rigidbody2D playerRB;
-
-    private void Start()
-    {
-        playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && worldSwitchEnabled)
+        float transitionTime = 1f;
+        public enum World
         {
-            playerRB.Sleep();
-            SwitchWorld();
+            Outerworld,
+            Innerworld
         }
-    }
 
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && worldSwitchEnabled)
+        public World curWorld;
+        public Scene curScene;
+
+        private void Start()
         {
-            Rigidbody2D playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
-            playerRB.Sleep();
+            inputReader.SwitchWorldEvent += SwitchWorld;
         }
-    }
 
-    public void SwitchWorld()
-    {
-        if(curWorld == World.Outerworld)
+        void Update()
         {
-            GameObject iwScene = GameObject.Find("IWSceneWrapper");
-            if(iwScene == null)
+
+        }
+
+        public void SwitchWorld()
+        {
+            Debug.Log("IW: " + PlayerPrefs.GetString("iwCurScene"));
+            Debug.Log("OW: " + PlayerPrefs.GetString("owCurScene"));
+
+            if (worldSwitchEnabled)
             {
-                StartCoroutine(LoadWorld(World.Innerworld));
-                Debug.Log("Loading Innerworld");
+                Time.timeScale = 0;
+
+                if (curWorld == World.Outerworld)
+                {
+                    GameObject iwScene = GameObject.Find("IWSceneWrapper");
+                    if (iwScene == null)
+                    {
+                        StartCoroutine(LoadWorld(World.Innerworld));
+                        Debug.Log("Loading Innerworld");
+                    }
+                    else
+                    {
+                        StartCoroutine(RestoreWorld(World.Innerworld));
+                        Debug.Log("Restoring Innerworld");
+                    }
+                }
+                else if (curWorld == World.Innerworld)
+                {
+                    GameObject owScene = GameObject.Find("OWSceneWrapper");
+                    if (owScene == null)
+                    {
+                        StartCoroutine(LoadWorld(World.Outerworld));
+                        Debug.Log("Loading Outerworld");
+                    }
+                    else
+                    {
+                        StartCoroutine(RestoreWorld(World.Outerworld));
+                        Debug.Log("Restoring Outerworld");
+                    }
+                }
+            }
+        }
+
+        IEnumerator LoadWorld(World world)
+        {
+            string sceneName;
+
+            if (world == World.Innerworld)
+            {
+                if (PlayerPrefs.HasKey("iwCurScene")) sceneName = PlayerPrefs.GetString("iwCurScene");
+                else
+                {
+                    sceneName = "IW Hub";
+                    PlayerPrefs.SetString("iwCurScene", sceneName);
+                }
             }
             else
             {
-                StartCoroutine(RestoreWorld(World.Innerworld));
-                Debug.Log("Restoring Innerworld");
+                if (PlayerPrefs.HasKey("owCurScene")) sceneName = PlayerPrefs.GetString("owCurScene");
+                else
+                {
+                    sceneName = "OW Bedroom";
+                    PlayerPrefs.SetString("owCurScene", sceneName);
+                }
             }
+
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            asyncLoad.allowSceneActivation = false;
+
+            transition.SetTrigger("Start");
+
+            yield return WaitForRealSeconds(transitionTime);
+
+
+            ToggleWorld(1 - world, false);
+
+            asyncLoad.allowSceneActivation = true;
+            Time.timeScale = 1;
+            worldSwitchEnabled = true;
+
         }
-        else if(curWorld == World.Innerworld)
+
+        IEnumerator RestoreWorld(World world)
         {
-            GameObject owScene = GameObject.Find("OWSceneWrapper");
-            if (owScene == null)
+            transition.SetTrigger("Start");
+            yield return WaitForRealSeconds(transitionTime);
+
+            ToggleWorld(world, true); // Enable target world
+            ToggleWorld(1 - world, false); // Disable current world
+            Time.timeScale = 1;
+            worldSwitchEnabled = true;
+        }
+
+        void ToggleWorld(World world, bool state)
+        {
+            string wrapperName = "";
+            if (world == World.Outerworld) wrapperName = "OWSceneWrapper";
+            if (world == World.Innerworld) wrapperName = "IWSceneWrapper";
+
+            try
             {
-                StartCoroutine(LoadWorld(World.Outerworld));
-                Debug.Log("Loading Outerworld");
+                GameObject.Find(wrapperName).gameObject.SetActive(state);
             }
-            else
+            catch (Exception ex) { Debug.LogException(ex, this); }
+
+        }
+
+        IEnumerator WaitForRealSeconds(float seconds)
+        {
+            float startTime = Time.realtimeSinceStartup;
+            while (Time.realtimeSinceStartup - startTime < seconds)
             {
-                StartCoroutine(RestoreWorld(World.Outerworld));
-                Debug.Log("Restoring Outerworld");
+                yield return null;
             }
         }
-    }
-
-    IEnumerator LoadWorld(World world)
-    {
-        string sceneName;
-
-        if (world == World.Innerworld)
-        {
-            if (PlayerPrefs.HasKey("iwCurScene")) sceneName = PlayerPrefs.GetString("iwCurScene");
-            else sceneName = "IW Hub";
-        }
-        else
-        {
-            if (PlayerPrefs.HasKey("owCurScene")) sceneName = PlayerPrefs.GetString("owCurScene");
-            else sceneName = "OW Bedroom";
-        }
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        asyncLoad.allowSceneActivation = false;
-
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(transitionTime);
-
-        ToggleWorld(1 - world, false);
-
-        asyncLoad.allowSceneActivation = true;
-
-    }
-
-    IEnumerator RestoreWorld(World world)
-    {
-        transition.SetTrigger("Start");
-        yield return new WaitForSeconds(transitionTime);
-
-        ToggleWorld(world, true); // Enable target world
-        ToggleWorld(1 - world, false); // Disable current world
-
-    }
-
-    void ToggleWorld(World world, bool state)
-    {
-        string wrapperName = "";
-        if (world == World.Outerworld) wrapperName = "OWSceneWrapper";
-        if (world == World.Innerworld) wrapperName = "IWSceneWrapper";
-
-        try
-        {
-            Transform parent = GameObject.Find(wrapperName).transform;
-            foreach(Transform child in parent)
-            {
-                child.gameObject.SetActive(state);
-            }
-        }
-        catch (Exception ex){ Debug.LogException(ex, this); }
-
     }
 }

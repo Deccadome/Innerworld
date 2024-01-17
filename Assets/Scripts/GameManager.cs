@@ -1,74 +1,200 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
-public class GameManager : MonoBehaviour
+namespace Dome
 {
-    public enum GameState
+    public class GameManager : MonoBehaviour
     {
-        Outerworld,
-        Innerworld,
-        Paused,
-        MainMenu
-    }
+        private const bool ON = true;
+        private const bool OFF = false;
 
-    public GameState curState;
-    private GameState prevState;
+        private float wsTransitionTime = 1f;
+        private float ngTransitionTime = 3f;
 
-    private void Update()
-    {
-        switch (curState)
+        public enum GameState
         {
-            case GameState.Outerworld:
-                PauseManager();
-                break;
-            case GameState.Innerworld:
-                PauseManager();
-                break;
-            case GameState.Paused:
-                PauseManager();
-                break;
-            case GameState.MainMenu:
-                break;
-            default:
-                Debug.LogWarning("Game State does not exist");
-                break;
+            Outerworld,
+            Innerworld,
+            Paused,
+            MainMenu
         }
-    }
 
-    void PauseManager()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        public GameState curState;
+        private GameState prevState;
+        public InputReader inputReader;
+        private Animator transitionAnimator;
+        private Canvas gmCanvas;
+
+        public Scene curIWScene;
+        public Scene curOWScene;
+        public GameObject iwWrapper;
+        public GameObject owWrapper;
+
+        public bool worldSwitchEnabled = false;
+
+        private void Awake()
         {
-            if(curState != GameState.Paused)
+            DontDestroyOnLoad(this);
+        }
+
+        private void Start()
+        {
+            transitionAnimator = GetComponentInChildren<Animator>();
+            gmCanvas = GetComponentInChildren<Canvas>();
+            curState = GameState.MainMenu;
+            inputReader.SetUI();
+
+            // Subscribe to input events
+            inputReader.PauseEvent += Pause;
+            inputReader.UnpauseEvent += Unpause;
+            inputReader.SwitchWorldEvent += SwitchWorld;
+        }
+
+        public void NewGame()
+        {
+            PlayerPrefs.DeleteAll();
+            StartCoroutine(NewGameCoroutine());
+        }
+
+        private IEnumerator NewGameCoroutine()
+        {
+            // Start menu fade animation
+            gmCanvas.sortingOrder = 10;
+            transitionAnimator.SetTrigger("newGame");
+            yield return new WaitForSeconds(ngTransitionTime);
+
+            // Prevent the menu from appearing again on scene load
+            GameObject.Find("Main Menu Canvas").SetActive(false);
+
+            // Load first scene and play opening animation
+            SceneManager.LoadScene("OW Bedroom");
+            ChangeState(GameState.Outerworld);
+            transitionAnimator.SetTrigger("ngLoaded");
+            inputReader.SetOW();
+            worldSwitchEnabled = true;
+        }
+
+        // Pause handling
+        private void Pause()
+        {
+            ChangeState(GameState.Paused);
+            Time.timeScale = 0f;
+        }
+
+        private void Unpause()
+        {
+            ChangeState(prevState);
+            Time.timeScale = 1f;
+        }
+
+        // Switching between IW and OW
+        private void SwitchWorld()
+        {
+            Debug.Log("Switching world...");
+            GameState otherWorld;
+            if (worldSwitchEnabled)
             {
-                ChangeState(GameState.Paused);
                 Time.timeScale = 0f;
-                Debug.Log("Game paused");
-            }
-            // Unpause
-            if(curState == GameState.Paused)
-            {
-                ChangeState(prevState);
-                Time.timeScale = 1f;
-                Debug.Log("Game unpaused");
+                if(curState == GameState.Outerworld)
+                {
+                    otherWorld = GameState.Innerworld;
+                    if(curIWScene != null)
+                    {
+                        StartCoroutine(LoadWorld(GameState.Innerworld, otherWorld));
+                        Debug.Log("Loading Innerworld");
+                    }
+                    else
+                    {
+                        StartCoroutine(RestoreWorld(GameState.Innerworld, otherWorld));
+                        Debug.Log("Restoring Innerworld");
+                    }
+                    ChangeState(GameState.Innerworld);
+                }
+                else if (curState == GameState.Innerworld)
+                {
+                    otherWorld = GameState.Innerworld;
+                    if (curOWScene != null)
+                    {
+                        StartCoroutine(LoadWorld(GameState.Innerworld, otherWorld));
+                        Debug.Log("Loading Outerworld");
+                    }
+                    else
+                    {
+                        StartCoroutine(RestoreWorld(GameState.Innerworld, otherWorld));
+                        Debug.Log("Restoring Outerworld");
+                    }
+                    ChangeState(GameState.Outerworld);
+                }
             }
         }
-    }
 
-    void WorldSwitch()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        IEnumerator LoadWorld(GameState world, GameState otherWorld)
         {
-            if(curState == GameState.Outerworld)
+            Scene loadScene;
+            if (world == GameState.Outerworld) loadScene = curOWScene;
+            else loadScene = curIWScene;
+
+            AsyncOperation asyncLoad = AsyncLoadScene(loadScene.name);
+
+            yield return SwitchWorldTransitionTrigger(world);
+
+            ToggleWorld(otherWorld, OFF);
+            asyncLoad.allowSceneActivation = true;
+            Time.timeScale = 1;
+            worldSwitchEnabled = true;
+        }
+
+        IEnumerator RestoreWorld(GameState world, GameState otherWorld)
+        {
+            yield return SwitchWorldTransitionTrigger(world);
+
+            ToggleWorld(world, ON); // Enable target world
+            ToggleWorld(otherWorld, OFF); // Disable current world
+            Time.timeScale = 1;
+            worldSwitchEnabled = true;
+        }
+
+        IEnumerator SwitchWorldTransitionTrigger(GameState world)
+        {
+            string trigger = "";
+            if (world == GameState.Outerworld) trigger = "I2O_Start";
+            else if (world == GameState.Innerworld) trigger = "O2I_Start";
+
+            transitionAnimator.SetTrigger(trigger);
+            yield return WaitForRealSeconds(wsTransitionTime);
+        }
+
+        void ToggleWorld(GameState gameState, bool state)
+        {
+            if(gameState == GameState.Innerworld) { iwWrapper.SetActive(state); }
+            else if(gameState == GameState.Outerworld) { owWrapper.SetActive(state); }
+            else { Debug.Log("ToggleWorld: " + gameState + " not a valid state"); }
+        }
+
+        // Helper functions
+        void ChangeState(GameState newState)
+        {
+            prevState = newState;
+            curState = newState;
+        }
+
+        IEnumerator WaitForRealSeconds(float seconds)
+        {
+            float startTime = Time.realtimeSinceStartup;
+            while (Time.realtimeSinceStartup - startTime < seconds)
             {
-                ChangeState(GameState.Innerworld);
+                yield return null;
             }
         }
-    }
 
-    void ChangeState(GameState newState)
-    {
-        curState = newState;
+        AsyncOperation AsyncLoadScene(string sceneName, bool allowSceneActivation = false)
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            asyncLoad.allowSceneActivation = allowSceneActivation;
+            return asyncLoad;
+        }
     }
 }
