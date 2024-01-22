@@ -5,14 +5,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.Events;
+using System.Diagnostics;
 
 namespace Dome { 
     [CreateAssetMenu(fileName = "InputReader", menuName = "InputReader")]
     public class InputReader : ScriptableObject, GameInput.IIWActions, GameInput.IOWActions, GameInput.IUIActions
     {
         public GameInput _gameInput;
-        public WorldSwitcher worldSwitcher;
-
 
         private void OnEnable()
         {
@@ -32,6 +31,8 @@ namespace Dome {
 
         public void SetIW()
         {
+
+            UnityEngine.Debug.Log(new StackTrace());
             _gameInput.IW.Enable();
             _gameInput.UI.Disable();
             _gameInput.OW.Disable();
@@ -69,10 +70,13 @@ namespace Dome {
         public event Action PauseEvent;
         public event Action UnpauseEvent;
 
+        public event Action<Vector2> PointEvent;
+        public event Action ClickEvent;
+
         public void OnMoveLeft(InputAction.CallbackContext context)
         {
-            if(context.phase == InputActionPhase.Performed) MoveLeftEvent?.Invoke();
-            if(context.phase == InputActionPhase.Canceled) MoveLeftCancelledEvent?.Invoke();
+            if (context.phase == InputActionPhase.Started) { MoveLeftEvent?.Invoke(); }
+            if (context.phase == InputActionPhase.Canceled) { MoveLeftCancelledEvent?.Invoke(); }
         }
         public void OnMoveRight(InputAction.CallbackContext context)
         {
@@ -92,12 +96,7 @@ namespace Dome {
 
         public void OnSwitchWorld(InputAction.CallbackContext context)
         {
-            if(context.phase == InputActionPhase.Performed)
-            {
-                SwitchWorldEvent?.Invoke();
-                if (_gameInput.OW.enabled) SetIW();
-                else if (_gameInput.IW.enabled) SetOW();
-            }
+            if(context.phase == InputActionPhase.Performed) SwitchWorldEvent?.Invoke();
         }
         public void OnInteract(InputAction.CallbackContext context)
         {
@@ -118,7 +117,7 @@ namespace Dome {
 
         public void OnPause(InputAction.CallbackContext context)
         {
-            PauseEvent?.Invoke();
+            if(context.phase == InputActionPhase.Performed) PauseEvent?.Invoke();
         }
 
 
@@ -140,12 +139,13 @@ namespace Dome {
 
         public void OnPoint(InputAction.CallbackContext context)
         {
-        
+            //Debug.Log(context.ReadValue<Vector2>());
+            PointEvent?.Invoke(context.ReadValue<Vector2>());
         }
 
         public void OnClick(InputAction.CallbackContext context)
         {
-        
+            if (context.phase == InputActionPhase.Performed) ClickEvent?.Invoke();
         }
 
         public void OnScrollWheel(InputAction.CallbackContext context)
@@ -175,7 +175,7 @@ namespace Dome {
 
         public void OnUnpause(InputAction.CallbackContext context)
         {
-            UnpauseEvent?.Invoke();
+            if (context.phase == InputActionPhase.Performed) UnpauseEvent?.Invoke();
         }
     }
 }

@@ -487,7 +487,7 @@ namespace Dome
                     ""id"": ""57347d22-927a-4966-abce-c100c1a3feb9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""initialStateCheck"": true
                 },
                 {
@@ -513,24 +513,6 @@ namespace Dome
                     ""type"": ""PassThrough"",
                     ""id"": ""ab983c38-8663-474f-8f58-d2799fd31e5c"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TrackedDevicePosition"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""0e23a7de-c16d-41c3-83f2-55a14d2ca286"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TrackedDeviceOrientation"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""a3527042-de81-4b57-adc1-ec6bcd5088a9"",
-                    ""expectedControlType"": ""Quaternion"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -944,28 +926,6 @@ namespace Dome
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7236c0d9-6ca3-47cf-a6ee-a97f5b59ea77"",
-                    ""path"": ""<XRController>/devicePosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""TrackedDevicePosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""23e01e3a-f935-4948-8d8b-9bcac77714fb"",
-                    ""path"": ""<XRController>/deviceRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""TrackedDeviceOrientation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""462f4e99-ffb4-46c2-a786-0c34fe5a6e74"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -1075,8 +1035,6 @@ namespace Dome
             m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
             m_UI_MiddleClick = m_UI.FindAction("MiddleClick", throwIfNotFound: true);
             m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
-            m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
-            m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
             m_UI_Unpause = m_UI.FindAction("Unpause", throwIfNotFound: true);
         }
 
@@ -1383,8 +1341,6 @@ namespace Dome
         private readonly InputAction m_UI_ScrollWheel;
         private readonly InputAction m_UI_MiddleClick;
         private readonly InputAction m_UI_RightClick;
-        private readonly InputAction m_UI_TrackedDevicePosition;
-        private readonly InputAction m_UI_TrackedDeviceOrientation;
         private readonly InputAction m_UI_Unpause;
         public struct UIActions
         {
@@ -1398,8 +1354,6 @@ namespace Dome
             public InputAction @ScrollWheel => m_Wrapper.m_UI_ScrollWheel;
             public InputAction @MiddleClick => m_Wrapper.m_UI_MiddleClick;
             public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
-            public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
-            public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
             public InputAction @Unpause => m_Wrapper.m_UI_Unpause;
             public InputActionMap Get() { return m_Wrapper.m_UI; }
             public void Enable() { Get().Enable(); }
@@ -1434,12 +1388,6 @@ namespace Dome
                 @RightClick.started += instance.OnRightClick;
                 @RightClick.performed += instance.OnRightClick;
                 @RightClick.canceled += instance.OnRightClick;
-                @TrackedDevicePosition.started += instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.performed += instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.canceled += instance.OnTrackedDevicePosition;
-                @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
                 @Unpause.started += instance.OnUnpause;
                 @Unpause.performed += instance.OnUnpause;
                 @Unpause.canceled += instance.OnUnpause;
@@ -1471,12 +1419,6 @@ namespace Dome
                 @RightClick.started -= instance.OnRightClick;
                 @RightClick.performed -= instance.OnRightClick;
                 @RightClick.canceled -= instance.OnRightClick;
-                @TrackedDevicePosition.started -= instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.performed -= instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.canceled -= instance.OnTrackedDevicePosition;
-                @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
                 @Unpause.started -= instance.OnUnpause;
                 @Unpause.performed -= instance.OnUnpause;
                 @Unpause.canceled -= instance.OnUnpause;
@@ -1578,8 +1520,6 @@ namespace Dome
             void OnScrollWheel(InputAction.CallbackContext context);
             void OnMiddleClick(InputAction.CallbackContext context);
             void OnRightClick(InputAction.CallbackContext context);
-            void OnTrackedDevicePosition(InputAction.CallbackContext context);
-            void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
             void OnUnpause(InputAction.CallbackContext context);
         }
     }

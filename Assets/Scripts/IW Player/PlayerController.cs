@@ -13,10 +13,12 @@ namespace Dome
         const int ON = 1;
         const int OFF = 0;
 
-        private int lastMoveDir;
         public float moveSpeed;
         private bool isMoving;
+        private Vector3 offset = new (0, 0, -5);
+        CameraController cameraController;
         Animator animController;
+        GameManager gameManager;
         Rigidbody2D rb;
         SpriteRenderer sr;
         [HideInInspector] public Vector2 lastMoveVector;
@@ -26,12 +28,32 @@ namespace Dome
 
         [SerializeField] private InputReader input;
 
+        private void Awake()
+        {
+            foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+            {
+                if(player != gameObject) Destroy(gameObject);
+            }
+            gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            cameraController = gameManager.GetComponentInChildren<CameraController>();
+            DontDestroyOnLoad(gameObject);
+        }
+
         void Start()
         {
             SetUpEvents();
             rb = GetComponent<Rigidbody2D>();
             animController = GetComponent<Animator>();
             sr = GetComponent<SpriteRenderer>();
+        }
+
+        private void OnEnable()
+        {
+            cameraController.transform.position = transform.position + offset;
+            cameraController.target = transform;
+            gameManager.playerReady = true;
+            if (name == "IW Player") gameManager.iwPlayer = gameObject;
+            else gameManager.owPlayer = gameObject;
         }
 
         void Update()
@@ -48,7 +70,11 @@ namespace Dome
         private void InputManagement()
         {
             moveDir = new Vector2(dirList[RIGHT] - dirList[LEFT], dirList[UP] - dirList[DOWN]);
-            if (moveDir.x != 0 || moveDir.y != 0) isMoving = true;
+            if (moveDir.x != 0 || moveDir.y != 0)
+            {
+                lastMoveVector = moveDir;
+                isMoving = true;
+            }
             else isMoving = false;
         }
 
@@ -78,6 +104,9 @@ namespace Dome
 
         private void SetUpEvents()
         {
+            Debug.Log("Player events subscribed");
+            Debug.Log(input._gameInput.OW.enabled);
+            Debug.Log(input._gameInput.IW.enabled);
             input.MoveLeftEvent += MoveLeft;
             input.MoveLeftCancelledEvent += MoveLeftCancelled;
             input.MoveRightEvent += MoveRight;

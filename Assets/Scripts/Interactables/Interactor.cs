@@ -12,6 +12,7 @@ namespace Dome
         public bool emptyHands = true;
         public GameObject heldItem;
         public InputReader inputReader;
+        public bool ableToInteract;
         [SerializeField]
         List<Collider2D> colsInRange;
         // Start is called before the first frame update
@@ -21,6 +22,7 @@ namespace Dome
             pc = player.GetComponent<PlayerController>();
             colsInRange = new List<Collider2D>();
             inputReader.InteractEvent += Interact;
+            ableToInteract = true;
         }
 
         // Update is called once per frame
@@ -38,7 +40,7 @@ namespace Dome
 
         Vector3 GetOffset()
         {
-            return pc.lastMoveVector.normalized / 2;
+            return pc.lastMoveVector.normalized / 3;
         }
 
         private void OnTriggerEnter2D(Collider2D col)
@@ -57,13 +59,13 @@ namespace Dome
         {
             if (!emptyHands)
             {
-                bool ableToInteract = false;
+                ableToInteract = false;
                 foreach (Collider2D col in colsInRange)
                 {
                     if (col.gameObject.TryGetComponent(out IInteractable obj))
                     {
-                        ableToInteract = true;
                         obj.Interact();
+                        ableToInteract = true;
                         break;
                     }
                 }
@@ -72,9 +74,11 @@ namespace Dome
             else if (colsInRange.Count > 0)
             {
                 Collider2D col = colsInRange[0];
+                Debug.Log(col.gameObject.name);
                 if (col.gameObject.TryGetComponent(out IInteractable obj))
                 {
                     obj.Interact();
+                    ableToInteract = true;
                 }
                 else if (col.gameObject.TryGetComponent(out IPickup item) && emptyHands)
                 {

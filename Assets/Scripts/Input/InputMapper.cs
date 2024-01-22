@@ -53,12 +53,14 @@ namespace Dome {
         public void SetBinding(string label, string control)
         {
             Debug.Log("Label: " + label + " Control: " + control);
-            Debug.Log(commands[label].AddBinding().WithPath(controls[control]));
+            //commands[label].AddBinding().WithPath(controls[control]);
+            commands[label].ApplyBindingOverride(controls[control]);
         }
 
-        public void UnsetBinding(string label)
+        public void UnsetBinding(string label, string control)
         {
-            commands[label].ChangeBinding(0).Erase();
+            InputAction command = commands[label];
+            command.RemoveBindingOverride(0);
         }
 
         private string GetInputCode(string control)

@@ -8,67 +8,84 @@ namespace Dome
     public class ItemPickup : MonoBehaviour, IPickup
     {
         protected Transform player;
-        protected Transform originParent;
+        public Transform originParent;
         Interactor interactor;
         protected Collider2D col;
         [SerializeField]
-        protected bool pickedUp = false;
+        public bool pickedUp = false;
         public GameObject tooltipPrefab;
         private GameObject tooltip;
 
         public string label;
+        public int itemID;
         private Vector3 downTooltipOffset = new(0, -1.5f, 0);
         private Vector3 upTooltipOffset = new(0, 1.5f, 0);
         public Vector3 pickedUpOffset = new(0, 0.75f, 0);
 
+        protected virtual void Awake()
+        {
+            foreach(ItemPickup item in GameObject.FindObjectsOfType<ItemPickup>())
+            {
+                if (item.itemID == itemID && item.gameObject != gameObject) Destroy(gameObject);
+            }
+            col = gameObject.GetComponent<Collider2D>();
+            if (pickedUp) col.enabled = false;
+        }
+
         protected virtual void Start()
         {
-            col = gameObject.GetComponent<Collider2D>();
             originParent = gameObject.transform.parent;
 
             player = GameObject.FindGameObjectWithTag("Player").transform;
             interactor = GameObject.FindGameObjectWithTag("Interactor").GetComponent<Interactor>();
 
-            Vector3 tooltipOffset;
-            if (player.position.y > transform.position.y)
-            {
-                tooltipOffset = downTooltipOffset;
-            }
-            else tooltipOffset = upTooltipOffset;
+            //Vector3 tooltipOffset;
+            //if (player.position.y > transform.position.y)
+            //{
+            //    tooltipOffset = downTooltipOffset;
+            //}
+            //else tooltipOffset = upTooltipOffset;
 
-            tooltip = Instantiate(tooltipPrefab, transform.position + tooltipOffset, Quaternion.identity, transform);
-            tooltip.GetComponentInChildren<TMP_Text>().text = "E";
-            tooltip.SetActive(false);
+            //tooltip = Instantiate(tooltipPrefab, transform.position + tooltipOffset, Quaternion.identity, transform);
+            //tooltip.GetComponentInChildren<TMP_Text>().text = "E";
+            //tooltip.SetActive(false);
         }
 
         protected virtual void Update()
         {
-            if (tooltip != null)
-            {
-                if (player.position.y > transform.position.y)
-                {
-                    tooltip.transform.position = transform.position + downTooltipOffset;
-                }
-                else tooltip.transform.position = transform.position + upTooltipOffset;
-            }
+            //if (tooltip != null)
+            //{
+            //    if (player.position.y > transform.position.y)
+            //    {
+            //        tooltip.transform.position = transform.position + downTooltipOffset;
+            //    }
+            //    else tooltip.transform.position = transform.position + upTooltipOffset;
+            //}
         }
 
         protected virtual void FixedUpdate()
         {
-            if (pickedUp) transform.position = player.position + pickedUpOffset;
+            if (transform.parent == player)
+            {
+                transform.position = player.position + pickedUpOffset;
+            }
+            else if (pickedUp) transform.position = transform.parent.position;
         }
 
         public virtual void Pickup()
         {
-            // Parent the player to the object
-            transform.SetParent(player);
+            if (!pickedUp)
+            {
+                // Parent the player to the object
+                transform.SetParent(player);
 
-            // Move the object above the player
-            transform.position = Vector3.MoveTowards(transform.position, player.position + pickedUpOffset, 5f);
+                // Move the object above the player
+                transform.position = Vector3.MoveTowards(transform.position, player.position + pickedUpOffset, 5f);
 
-            interactor.heldItem = gameObject;
-            col.enabled = false;
-            pickedUp = true;
+                interactor.heldItem = gameObject;
+                col.enabled = false;
+                pickedUp = true;
+            }
         }
 
         public virtual void Drop()
@@ -81,17 +98,22 @@ namespace Dome
 
         public virtual void EnablePrompt()
         {
-            tooltip.SetActive(true);
+            //tooltip.SetActive(true);
         }
 
         public virtual void DisablePrompt()
         {
-            tooltip.SetActive(false);
+            //tooltip.SetActive(false);
         }
 
         public virtual string GetLabel()
         {
             return label;
+        }
+
+        public virtual void SetLabel(string newLabel)
+        {
+            label = newLabel;
         }
     }
 }

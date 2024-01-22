@@ -11,6 +11,7 @@ namespace Dome
         public string control;
         private bool hasOrb;
         private OrbController curOrb;
+        public Vector3 orbOffset = new(0, 0.5f, 0);
         // Start is called before the first frame update
         protected override void Start()
         {
@@ -25,10 +26,11 @@ namespace Dome
         {
             Debug.Log("Interactor called");
             base.Interact();
-            if (!hasOrb)
+            if (!hasOrb && heldItem)
             {
                 if (heldItem.TryGetComponent<OrbController>(out OrbController orb))
                 {
+                    Debug.Log("Placing orb");
                     curOrb = orb;
                     im.SetBinding(orb.GetLabel(), control);
 
@@ -36,16 +38,19 @@ namespace Dome
                     interactor.heldItem = null;
                     hasOrb = true;
 
-                    curOrb.PlaceOrb(transform);
+                    curOrb.PlaceOrb(transform, orbOffset);
                 }
                 else
                 {
                     Debug.Log("Wrong item");
                 }
             }
-            else if (interactor.emptyHands)
+            else if (hasOrb && interactor.emptyHands)
             {
+                
                 Debug.Log("Picked back up");
+                hasOrb = false;
+                im.UnsetBinding(curOrb.GetLabel(), control);
                 interactor.Pickup(curOrb);
             }
         }

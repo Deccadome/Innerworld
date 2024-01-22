@@ -9,6 +9,7 @@ TagManager:
   - Interactible
   - Interactor
   - SceneWrapper
+  - GameManager
   layers:
   - Default
   - TransparentFX
