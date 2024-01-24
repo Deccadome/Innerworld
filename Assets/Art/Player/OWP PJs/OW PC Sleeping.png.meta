@@ -1,0 +1,875 @@
+fileFormatVersion: 2
+guid: 7f7ed7b5cf3ca974ba44b06e7c513c7e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OW PC Sleeping_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c145bab82b93fa24a90d8647514927bc
+      internalID: 130094905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_1
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3235e06ca8d84a64499fb83dca54ed95
+      internalID: -684781451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_2
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec059274aba2cc4799799a861a40e96
+      internalID: -1472563089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d539a4ac528021542af2d3d67b0df8f7
+      internalID: -1061724991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_4
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18038e51104df84d9d54e665a561714
+      internalID: 326381521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_5
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cd16a0dafea134fa6a8943e3fea28b
+      internalID: 1072537518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_6
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8815c37d3e70d46448e8888116b45f36
+      internalID: 210176494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_7
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b4007748b32df43b33012d8548c31e
+      internalID: -1469634155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4d533d074456940960f6b23554fb85
+      internalID: 167255209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_9
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ea35ba2558dc44dab4095c882cfab0
+      internalID: 1305897188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_10
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a5b61b7df107c4f8b728910470ee33
+      internalID: -147741703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_11
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73a79e93adf03b45b4d93e3e219048b
+      internalID: -349720730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_12
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1dc654630bc814aad73343da09b908
+      internalID: 82296869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_13
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781e1a581f6ff804e98d25b45db420b4
+      internalID: -1229085735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_14
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff6bb963e63613489ca02fde1019a48
+      internalID: -525230574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_15
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 660
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1380599360b43b6449c41cf66eeb495c
+      internalID: 374806729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_16
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20bd95858e7caa42af7ecc952ae46d2
+      internalID: 985621556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_17
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f583b1e249847f748a0f208597741133
+      internalID: -441149074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_18
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59cb5fe5ae3d18f4785f8075890eecba
+      internalID: -1390359104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_19
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05aaac61e394b9e43be37a7903087c39
+      internalID: 1719500561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_20
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aebcaca91c422a42ab9256960b44b13
+      internalID: 1581869310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_21
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe5957e233f75b44aaef09c72808a4c
+      internalID: -848729816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_22
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5e1e7bff8b71d40b7b0f348913c03d
+      internalID: 1294012624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_23
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 440
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a443286593c1da74691400ffde07a49c
+      internalID: 1196090616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_24
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a23af66d7be0443bb415321073937a
+      internalID: 314255417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_25
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852b2680551f1654db46204ca7ebe700
+      internalID: -1143634530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_26
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7faa970d05be3d641880d302ba3bd560
+      internalID: -314235987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_27
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d80140ff8bf0264cbe126e90e926b7d
+      internalID: -1093575960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_28
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21162c96d3b1db048b6a88eacc60e6d2
+      internalID: 109299707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_29
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869371147d90dfa4b903b4f29aa0bc5f
+      internalID: 2026310593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_30
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364d1b564128796479d71cbef4558fb8
+      internalID: 268514991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_31
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 220
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17815cb7124a8b488d83ffc55dc6f9d
+      internalID: 265930784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_32
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda199163840277439dbbd592547ce2d
+      internalID: -698542238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Sleeping_33
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13aaec3bfd762fe4b9447a1195cb7747
+      internalID: -1633599116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      OW PC Sleeping_0: 130094905
+      OW PC Sleeping_1: -684781451
+      OW PC Sleeping_10: -147741703
+      OW PC Sleeping_11: -349720730
+      OW PC Sleeping_12: 82296869
+      OW PC Sleeping_13: -1229085735
+      OW PC Sleeping_14: -525230574
+      OW PC Sleeping_15: 374806729
+      OW PC Sleeping_16: 985621556
+      OW PC Sleeping_17: -441149074
+      OW PC Sleeping_18: -1390359104
+      OW PC Sleeping_19: 1719500561
+      OW PC Sleeping_2: -1472563089
+      OW PC Sleeping_20: 1581869310
+      OW PC Sleeping_21: -848729816
+      OW PC Sleeping_22: 1294012624
+      OW PC Sleeping_23: 1196090616
+      OW PC Sleeping_24: 314255417
+      OW PC Sleeping_25: -1143634530
+      OW PC Sleeping_26: -314235987
+      OW PC Sleeping_27: -1093575960
+      OW PC Sleeping_28: 109299707
+      OW PC Sleeping_29: 2026310593
+      OW PC Sleeping_3: -1061724991
+      OW PC Sleeping_30: 268514991
+      OW PC Sleeping_31: 265930784
+      OW PC Sleeping_32: -698542238
+      OW PC Sleeping_33: -1633599116
+      OW PC Sleeping_4: 326381521
+      OW PC Sleeping_5: 1072537518
+      OW PC Sleeping_6: 210176494
+      OW PC Sleeping_7: -1469634155
+      OW PC Sleeping_8: 167255209
+      OW PC Sleeping_9: 1305897188
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

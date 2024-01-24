@@ -24,7 +24,12 @@ namespace Dome
 
         PlayableDirector cutscene;
         GameManager gm;
+        SaveManager sm;
         OrbController orb;
+        public List<AudioSource> chirps;
+        public List<AudioSource> runSounds;
+
+        public string puzzleName;
 
         private Dictionary<Direction, Vector2> dirVectors;
         private float rayLength = 1f;
@@ -38,14 +43,20 @@ namespace Dome
         [SerializeField] Direction playerDir;
         [SerializeField] bool canMove = false;
         bool dirAvailable;
-        bool caught = false;
         Vector2 target;
+
+        private void Awake()
+        {
+            gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            sm = gm.GetComponent<SaveManager>();
+
+            if(sm.milestones.Contains(puzzleName)) Destroy(gameObject);
+        }
 
         protected override void Start()
         {
             base.Start();
             cutscene = GetComponentInChildren<PlayableDirector>();
-            gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             orb = GetComponentInChildren<OrbController>();
 
             requiresObject = false;
@@ -77,7 +88,7 @@ namespace Dome
 
         public override void Interact()
         {
-            Debug.Log("Interact called");
+            //Debug.Log("Interact called");
             if (interactor.emptyHands)
             {
                 // if player is L/R/U/D
@@ -138,6 +149,7 @@ namespace Dome
             { 
                 moveDir = dirVectors[firstDir];
                 dirAvailable = true;
+                chirps[Random.Range(0, chirps.Count)].Play();
             }
             else if (availableDirs.Count > 0)
             {
@@ -147,13 +159,12 @@ namespace Dome
                     {
                         moveDir = dirVectors[dir];
                         dirAvailable = true;
+                        chirps[Random.Range(0, chirps.Count)].Play();
                     }
                 }
             }
             else { 
                 dirAvailable = false; 
-                caught = true; 
-                Debug.Log("Leaf boy has been caught");
                 StartCoroutine(Caught());
             }
         }
@@ -176,6 +187,8 @@ namespace Dome
 
         IEnumerator Caught()
         {
+            sm.SetMilestone(puzzleName);
+
             // Player pick up orb
             orb.pickedUp = false;
             interactor.Pickup(orb);
@@ -189,6 +202,20 @@ namespace Dome
             Time.timeScale = 1f;
             Destroy(gameObject);
 
+        }
+
+        public void RunAwaySounds()
+        {
+            StartCoroutine(RunAwayCoroutine());
+        }
+
+        private IEnumerator RunAwayCoroutine()
+        {
+            chirps[2].Play();
+            yield return new WaitForSecondsRealtime(1.15f);
+            runSounds[0].Play();
+            yield return new WaitForSecondsRealtime(0.37f);
+            runSounds[1].Play();
         }
     }
 }

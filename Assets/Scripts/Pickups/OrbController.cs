@@ -47,7 +47,7 @@ namespace Dome
             {
                 Debug.Log("Popping off");
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, 5 * Time.fixedDeltaTime);
-                if(transform.position == targetPos) poppingOff = false;
+                if(transform.position == targetPos || pickedUp) poppingOff = false;
             }
         }
 
@@ -68,6 +68,7 @@ namespace Dome
             col.enabled = false;
             pickedUp = false;
             transform.position = pylon.position + offset;
+            Debug.Log(offset);
             gameObject.transform.SetParent(pylon);
             placed = true;
             animController.enabled = placed;
@@ -97,7 +98,7 @@ namespace Dome
             poppingOff = true;
         }
 
-        public IEnumerator RotateOrb()
+        public IEnumerator RotateOrb(Rotator rotator)
         {
             animController.SetBool("isRotating", true);
             float newRotation = 0f;
@@ -128,6 +129,7 @@ namespace Dome
             yield return new WaitForSeconds(rotateAnimationTime);
 
             transform.eulerAngles = new Vector3(0, 0, newRotation);
+            rotator.isRotating = false;
         }
     }
 }

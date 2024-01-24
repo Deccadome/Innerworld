@@ -1,0 +1,1007 @@
+fileFormatVersion: 2
+guid: b4bbc7e2da6de2740807b2fc4d59d64a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OW PC Waking_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106d7a98fca39ce4283962286a99acd3
+      internalID: -1242903714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_1
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850068361eeb332438ed69ea2df24d8a
+      internalID: -1092514852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_2
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b02622099927e42b451146fc5dee84
+      internalID: 1646212165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1baf2dd2d5a4a845a4c70762c55e729
+      internalID: 346650890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_4
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 880
+        width: 68
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ee5fb64206d9b46bee4353eb644e87
+      internalID: -1749154630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_5
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 880
+        width: 70
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7cd982a32775a4693b8ce5fb248878
+      internalID: -446232752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_6
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 880
+        width: 74
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e33392aeb914240ae543daf6720c7a
+      internalID: -331648539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_7
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 880
+        width: 74
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9084b332557c3ff4496085cbd548c1e7
+      internalID: -2073587847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 660
+        width: 86
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3fe72a284a7d304e8c30cfeca28d0e5
+      internalID: 1486885979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_9
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 660
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52178c2aff32d2c4fa5738e3577b1332
+      internalID: -856282528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_10
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 660
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded842f83caee144a987f8d7ba687867
+      internalID: -1752302893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_11
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 660
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f5483102f1d9742b750e0b968c3fde
+      internalID: -691121668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_12
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 660
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7917e87be17b27947b9fc7d9fba83c7e
+      internalID: 2053334129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_13
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 660
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af22f451af1134441a0ecc4c30dde7cc
+      internalID: -132611594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_14
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 660
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea07c3358b495a046b774301fa859312
+      internalID: -1793883889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_15
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 660
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36423a3faf64cbc47911e1ed7acb3d68
+      internalID: 887707985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_16
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44dc49b749a8bae44a4f231b149e0c87
+      internalID: 644858805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_17
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa8f08f979a1414c9bd7c0920e468c0
+      internalID: -904145129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_18
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897dfee8267415b45a410c1ecf4da99b
+      internalID: -990327241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_19
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e7172ccb314734982cbef7cb40e779
+      internalID: -878634878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_20
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dc54037c51ee2418441a2975129795
+      internalID: 25017523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_21
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03169abf8b68cf648b6f959ccf42044e
+      internalID: 920601772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_22
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b44d6d546bf08b43807a653eeb4e677
+      internalID: 735562126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_23
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 440
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60d4856facf0284382d999c4f758d9d
+      internalID: 778643581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_24
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a32942cd408964e90735d7bb0cb276
+      internalID: -1214805226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_25
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6928788a58f7847921f52312e07672
+      internalID: -616866200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_26
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3ca91c630ee0b4fa5aefd797cbb22c
+      internalID: -1323661781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_27
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6f22436bc984a4f93ccf7f463017fc
+      internalID: 20575721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_28
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8277605ecfe7b2f4daa862b7d4be55bf
+      internalID: -1554525704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_29
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d260ba5ce911b488e4ea9eda94ea5d
+      internalID: 1529020855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_30
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de824b4a54899de4d9695038990b93ff
+      internalID: 401330388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_31
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 220
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315a072c3959137439b0440e6faa6555
+      internalID: -189496531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_32
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d8a0e549dc6254d828372a003a8d75
+      internalID: 1156150221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_33
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4ade1635eb44d4ca26ac0f643289a9
+      internalID: -1048146799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_34
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 0
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55726c6edbbd36142bf09ef3eb596a99
+      internalID: -2091085880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_35
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 0
+        width: 82
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de4c90e26171f146bcdc17b4a5bcb20
+      internalID: -2141165226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_36
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 0
+        width: 82
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41e56743503c5145b9658c9f42a1ee1
+      internalID: -159398645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_37
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 0
+        width: 82
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3444fabdbfddf964198ed885576b6fbf
+      internalID: -1279405268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_38
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 0
+        width: 82
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff7648c7aedc844dbbcd6d2fc7ba76a
+      internalID: 1158755705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OW PC Waking_39
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 0
+        width: 82
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f17bb1dd54c9743b505f7d59465375
+      internalID: -2020737720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      OW PC Waking_0: -1242903714
+      OW PC Waking_1: -1092514852
+      OW PC Waking_10: -1752302893
+      OW PC Waking_11: -691121668
+      OW PC Waking_12: 2053334129
+      OW PC Waking_13: -132611594
+      OW PC Waking_14: -1793883889
+      OW PC Waking_15: 887707985
+      OW PC Waking_16: 644858805
+      OW PC Waking_17: -904145129
+      OW PC Waking_18: -990327241
+      OW PC Waking_19: -878634878
+      OW PC Waking_2: 1646212165
+      OW PC Waking_20: 25017523
+      OW PC Waking_21: 920601772
+      OW PC Waking_22: 735562126
+      OW PC Waking_23: 778643581
+      OW PC Waking_24: -1214805226
+      OW PC Waking_25: -616866200
+      OW PC Waking_26: -1323661781
+      OW PC Waking_27: 20575721
+      OW PC Waking_28: -1554525704
+      OW PC Waking_29: 1529020855
+      OW PC Waking_3: 346650890
+      OW PC Waking_30: 401330388
+      OW PC Waking_31: -189496531
+      OW PC Waking_32: 1156150221
+      OW PC Waking_33: -1048146799
+      OW PC Waking_34: -2091085880
+      OW PC Waking_35: -2141165226
+      OW PC Waking_36: -159398645
+      OW PC Waking_37: -1279405268
+      OW PC Waking_38: 1158755705
+      OW PC Waking_39: -2020737720
+      OW PC Waking_4: -1749154630
+      OW PC Waking_5: -446232752
+      OW PC Waking_6: -331648539
+      OW PC Waking_7: -2073587847
+      OW PC Waking_8: 1486885979
+      OW PC Waking_9: -856282528
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,436 @@
+fileFormatVersion: 2
+guid: 69d57381e83ab3342898eb0826c171e4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 166
+        width: 76
+        height: 85
+      alignment: 9
+      pivot: {x: 0.8, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffacab31f0971a45aaef50344658885
+      internalID: -2073086349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_1
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 166
+        width: 50
+        height: 86
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21c0f1cc0e5c1640b6549664c0510c0
+      internalID: 995252228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_2
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 166
+        width: 83
+        height: 86
+      alignment: 9
+      pivot: {x: 0.3, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89939d9477a00594db6facfaae899e3f
+      internalID: -1001709748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_3
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 149
+        width: 102
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f5996841743e54b95c79c606024e03
+      internalID: 1557261493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_4
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 149
+        width: 102
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4641d1ad182cc954ebef0da91720fb38
+      internalID: 181753618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_5
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 149
+        width: 102
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ea6b5321f012142ab1a60735e1bdd2
+      internalID: -1570906437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_6
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 149
+        width: 102
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa2d6c9f8c774f46955569c1076a391
+      internalID: -857285463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_8
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 149
+        width: 103
+        height: 69
+      alignment: 9
+      pivot: {x: 0.22, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763986e7eca73584880526fce6eb675b
+      internalID: 242471243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_9
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 21
+        width: 102
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e47860882b8de4880633facda0a91d
+      internalID: 934831114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_10
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 21
+        width: 100
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8bf926c5c273584e80dd991e0958d9b
+      internalID: -848655713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_11
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 21
+        width: 122
+        height: 71
+      alignment: 9
+      pivot: {x: 0.35, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9eaeec47c1e0814aa472fadba551190
+      internalID: 746461652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_12
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 21
+        width: 122
+        height: 69
+      alignment: 9
+      pivot: {x: 0.35, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaaecb0fa6791644a8a92bd92c15bf5e
+      internalID: -1533810804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_13
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 21
+        width: 122
+        height: 69
+      alignment: 9
+      pivot: {x: 0.35, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52aac37f5d71ddc41a6fc82382d26002
+      internalID: 2038702697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ow PC Profile Axe Swing_14
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 21
+        width: 102
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11371fae0d315a42916d2c67f23c542
+      internalID: 819397940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ow PC Profile Axe Swing_0: -2073086349
+      Ow PC Profile Axe Swing_1: 995252228
+      Ow PC Profile Axe Swing_10: -848655713
+      Ow PC Profile Axe Swing_11: 746461652
+      Ow PC Profile Axe Swing_12: -1533810804
+      Ow PC Profile Axe Swing_13: 2038702697
+      Ow PC Profile Axe Swing_14: 819397940
+      Ow PC Profile Axe Swing_2: -1001709748
+      Ow PC Profile Axe Swing_3: 1557261493
+      Ow PC Profile Axe Swing_4: 181753618
+      Ow PC Profile Axe Swing_5: -1570906437
+      Ow PC Profile Axe Swing_6: -857285463
+      Ow PC Profile Axe Swing_7: -1403966805
+      Ow PC Profile Axe Swing_8: 242471243
+      Ow PC Profile Axe Swing_9: 934831114
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,7 +10,7 @@ namespace Dome
 
         private void Start()
         {
-            gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+            gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         }
 
         void ResumeGame()

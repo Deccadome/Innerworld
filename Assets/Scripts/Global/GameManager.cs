@@ -29,8 +29,10 @@ namespace Dome
         private GameState prevState;
         public InputReader inputReader;
         public GameObject pauseMenu;
+        public AudioSource wsSound;
         private Animator transitionAnimator;
         private Canvas gmCanvas;
+        private SaveManager sm;
         //private CameraController cam;
 
         public bool playerReady;
@@ -60,6 +62,7 @@ namespace Dome
         {
             transitionAnimator = GetComponentInChildren<Animator>();
             gmCanvas = GetComponentInChildren<Canvas>();
+            sm = GetComponentInChildren<SaveManager>();
             //cam = GetComponentInChildren<CameraController>();
 
             if (!testing) { 
@@ -87,6 +90,7 @@ namespace Dome
 
         private IEnumerator NewGameCoroutine()
         {
+            Time.timeScale = 1f;
             // Start menu fade animation
             playerReady = false;
             gmCanvas.sortingOrder = 10;
@@ -118,12 +122,14 @@ namespace Dome
             // Destroy current OW/IW wrappers
             if(iwWrapper != null) Destroy(iwWrapper);
             if(owWrapper != null) Destroy(owWrapper);
+            if(iwPlayer != null) Destroy(iwPlayer);
+            if(owPlayer != null) Destroy(owPlayer);
 
             SceneManager.LoadScene("Main Menu");
             ChangeState(GameState.MainMenu);
             pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
             transitionAnimator.SetTrigger("enterMenu");
+            Time.timeScale = 1f;
         }
 
         // Pause handling
@@ -159,6 +165,7 @@ namespace Dome
                 GameState otherWorld = (curState == GameState.Outerworld) ? GameState.Innerworld : GameState.Outerworld;
 
                 Time.timeScale = 0f;
+                wsSound.Play();
                 playerReady = false;
                 worldSwitchEnabled = false;
 
@@ -182,6 +189,8 @@ namespace Dome
             else
             {
                 yield return SwitchWorldTransitionTrigger(targetWorld);
+                if (curWorld == GameState.Innerworld) sm.SaveObjects();
+                else { sm.LoadObjects(curIWScene); }
                 ToggleWorld(targetWorld, ON);
                 ToggleWorld(curWorld, OFF);
             }
@@ -207,6 +216,9 @@ namespace Dome
             AsyncOperation asyncLoad = AsyncLoadScene(sceneName);
             transitionAnimator.SetTrigger("roomSwitch");
             yield return new WaitForSecondsRealtime(wsTransitionTime);
+
+            sm.SaveObjects();
+
             string prevScene;
             if (curState == GameState.Innerworld)
             {
@@ -220,9 +232,10 @@ namespace Dome
                 curOWScene = sceneName;
                 yield return WaitForDestroy(owWrapper);
             }
+            sm.LoadObjects(sceneName);
             asyncLoad.allowSceneActivation = true;
             yield return new WaitForSecondsRealtime(wsTransitionTime);
-            
+            SceneManager.UnloadSceneAsync(prevScene);
             Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             RoomData roomData = GameObject.FindGameObjectWithTag("SceneWrapper").GetComponent<RoomData>();
 

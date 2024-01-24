@@ -24,9 +24,14 @@ namespace Dome
 
         protected virtual void Awake()
         {
-            foreach(ItemPickup item in GameObject.FindObjectsOfType<ItemPickup>())
+            foreach (ItemPickup item in GameObject.FindObjectsOfType<ItemPickup>(true))
             {
-                if (item.itemID == itemID && item.gameObject != gameObject) Destroy(gameObject);
+                Debug.Log("GameObject: " + item.gameObject + " Label: " + item.label + " ItemID: " + item.itemID);
+                if (item.itemID == itemID && item.gameObject != gameObject)
+                {
+                    Debug.Log("Item ID: " + itemID + "GameObject: " + item.gameObject.name);
+                    Destroy(gameObject);
+                }
             }
             col = gameObject.GetComponent<Collider2D>();
             if (pickedUp) col.enabled = false;
@@ -80,7 +85,7 @@ namespace Dome
                 transform.SetParent(player);
 
                 // Move the object above the player
-                transform.position = Vector3.MoveTowards(transform.position, player.position + pickedUpOffset, 5f);
+                transform.position = player.position + pickedUpOffset;
 
                 interactor.heldItem = gameObject;
                 col.enabled = false;

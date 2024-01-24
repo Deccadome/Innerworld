@@ -7,6 +7,7 @@ namespace Dome
     public class Interactor : MonoBehaviour
     {
         PlayerController pc;
+        Animator ac;
         Transform player;
         public Vector3 playerMoveDir;
         public bool emptyHands = true;
@@ -19,6 +20,7 @@ namespace Dome
         void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
+            ac = player.GetComponent<Animator>();
             pc = player.GetComponent<PlayerController>();
             colsInRange = new List<Collider2D>();
             inputReader.InteractEvent += Interact;
@@ -40,7 +42,9 @@ namespace Dome
 
         Vector3 GetOffset()
         {
-            return pc.lastMoveVector.normalized / 3;
+            Vector3 offsetPos = pc.lastMoveVector.normalized / 3;
+            if (pc.name == "OW Player") offsetPos.y -= 0.5f;
+            return offsetPos;
         }
 
         private void OnTriggerEnter2D(Collider2D col)
@@ -82,6 +86,7 @@ namespace Dome
                 }
                 else if (col.gameObject.TryGetComponent(out IPickup item) && emptyHands)
                 {
+                    ac.SetTrigger("grab");
                     Pickup(item);
                 }
             }
